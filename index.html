@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>monaco-vscode-api demo</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script type="module" src="/src/loader.ts"></script>
-  </head>
-  <body>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>YOUCODE.AI</title>
+  <!--<script>
+    // Redirect to builder if on the root domain
+    if (window.location.pathname === '/' && !window.location.search) {
+      window.location.href = 'https://www.blackbox.ai/builder?ref=youcode';
+    }
+  </script>-->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./src/loading.css">
+  <script>
+    // Handle base path for assets
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      const base = document.createElement('base');
+      base.href = window.location.origin + '/';
+      document.head.prepend(base);
+    }
+  </script>
+</head>
+<body>
+<div id="loading-overlay">
+  <div class="loading-content">
+    <div class="loading-text">Setting up your codespace</div>
+  </div>
+</div>
+<script type="module" src="/src/landing.ts"></script>
+</body>
 </html>
